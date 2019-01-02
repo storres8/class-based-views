@@ -4,5 +4,5 @@ from django.http import HttpResponse
 
 
 class CBView(View):
-    def get(self, request):
-        return HttpResponse("CBV")
+    def get(self,request):
+        return HttpResponse("CBV!")
