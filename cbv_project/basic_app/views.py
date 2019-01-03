@@ -6,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from basic_app.models import School, Student
+from django.urls import reverse_lazy
 
 
 class CBView(View):
@@ -35,3 +36,13 @@ class SchoolCreateView(CreateView):
     model = School
     fields = ['name', 'principal', 'location']
     template_name = 'basic_app/school_form.html'
+
+class SchoolUpdateView(UpdateView):
+    model = School
+    fields = ['name', 'principal']
+    template_name = 'basic_app/school_form.html'
+
+class SchoolDeleteView(DeleteView):
+    model = School
+    success_url = reverse_lazy("basic_app:school_list")
+    template_name = 'basic_app/school_confirm_delete.html'

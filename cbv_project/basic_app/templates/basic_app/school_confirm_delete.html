@@ -1,0 +1,14 @@
+{% extends "basic_app/basic_app_base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete <strong>"{{ school.name }}"</strong>?</p>
+    <input type="submit" value="Confirm" class="btn btn-danger">
+    <p></p>
+    <p><a class="btn btn-primary" href="{% url 'basic_app:school_list' %}">Cancel</a></p>
+  </form>
+</div>
+
+{% endblock %}

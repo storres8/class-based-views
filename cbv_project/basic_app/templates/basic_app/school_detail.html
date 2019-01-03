@@ -23,4 +23,10 @@
     </div>
   </div>
 
+  <div class="container">
+    <!--the pk=school_detail.pk is an argument that passes the pk aka school Id to the school update url-->
+    <p><a class="btn btn-warning" href="{% url 'basic_app:school_update' pk=school_detail.pk %}">Update</a></p>
+    <p><a class="btn btn-danger" href="{% url 'basic_app:school_delete' pk=school_detail.pk %}">Delete</a></p>
+  </div>
+
 {% endblock %}

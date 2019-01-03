@@ -23,4 +23,7 @@ urlpatterns = [
     path('list/', views.SchoolListView.as_view(), name='school_list'),
     path('list/<slug:pk>/', views.SchoolDetailView.as_view(), name='school_detail'),
     path('create/', views.SchoolCreateView.as_view(), name='school_create'),
+    path('update/<slug:pk>/', views.SchoolUpdateView.as_view(), name='school_update'),
+    path('delete/<slug:pk>/', views.SchoolDeleteView.as_view(), name='school_delete'),
+
 ]
