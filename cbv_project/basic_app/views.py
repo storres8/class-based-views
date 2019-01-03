@@ -23,6 +23,7 @@ class IndexView(TemplateView):
 class SchoolListView(ListView):
     context_object_name = 'schools'
     model = School
+    template_name = 'basic_app/school_list1.html'
 
 class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'
